@@ -30,7 +30,7 @@ def retrieve_data():
         queries = query.split(' ')
         test = get_results(queries)
         result = []
-        print(test)
+
         for value in test.values():
             values = value.split("-;")
             data = {
@@ -39,8 +39,6 @@ def retrieve_data():
                 "title": values[2]
              }
             result.append(data)
-
-        print(result)
 
         return render_template('retrieve_profiles.html', data=result)
 

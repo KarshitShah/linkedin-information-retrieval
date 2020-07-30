@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<h2 style="margin: 20px;">LinkedIn Profile Classifier</h2>
+			<form method="POST" action="/result">
+				<div class="form-group" style="margin-left: 20px;">
+					<label for="url">Enter LinkedIn Profile Url:</label>
+					<input type="text" class="form-control" name="url" placeholder="Enter url here" >
+				</div>
+				<input type="submit" value="Get" class="btn btn-info" style="width:250px;text-align: center;margin: 20px;">
+			</form>
+			{% if data %}
+				<h3 style="margin-left:20px;" >{{data}}</h3>
+			{% endif %}
+		</div>
+	</body>
+</html>

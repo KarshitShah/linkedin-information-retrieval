@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<style>
+			.link {
+				text-decoration: none; 
+				color:black;
+			}
+			.link:hover {
+				transition: 0.2s;
+				color:#3366BB;
+			}
+		</style>
+
+		<div class="container">
+			<h2 style="margin: 20px;">LinkedIn Profiles Retrieval</h2>
+			<form method="POST", action="/result">
+				<div class="form-group" style="margin-left: 20px;">
+					<label for="queries">Enter Search Queries:</label>
+					<input type="text" name="queries" class="form-control" placeholder="Enter text in space separated values">
+				</div>
+				<input type="submit" value="Get" class="btn btn-info" style="width:250px;text-align: center;margin: 20px;">
+			</form>
+
+			{% if data %}
+				<table class="table table-hover table-bordered" style="margin-left:20px;">
+					<thead class="thead-dark">
+						<tr>
+							<th>Name</th>
+							<th>LinkedIn Profile</th>
+							<th>Title</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for item in data: %}
+							<tr>
+								<td>{{item["name"]}}</td>
+								<td ><a class="link" href = {{item["url"]}} >{{item["url"]}}</a></td>
+								<td>{{item['title']}}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% endif %}
+
+		</div>
+	</body>
+</html>

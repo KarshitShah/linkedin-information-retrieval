@@ -18,4 +18,5 @@ To get this repository running, you'll need to follow the following steps:
 - Activate the virtual env by running `source env/bin/activate`
 - Install all the required packeges by running `pip3 install -r requirements.txt`
 - To run the app, run `python3 API.py` from the `src` directory
+- Go to [localhost:5000]{localhost:5000} to use the application
 - To deactivate the virtual env, simply run `deactivate`

@@ -183,12 +183,12 @@ def classify_profile(profile):
     label = classify(profile_data)
 
     if label == 0:
-        return "Given profile is of a Recruiter"
+        return "Recruiter"
     elif label == 1:
-        return "Given profile is of a Software Engineer"
+        return "Software Engineer"
     elif label == 2:
-        return "Given profile is of a Electrical Engineer"
+        return "Electrical Engineer"
     elif label == 3:
-        return "Given profile is of a Mechanical Engineer"
+        return "Mechanical Engineer"
     elif label == 4:
-        return "Given profile is of a Business Analyst"
+        return "Business Analyst"

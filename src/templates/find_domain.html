@@ -19,7 +19,14 @@
 				<input type="submit" value="Get Domain" class="btn btn-info" style="width:150px;text-align: center;margin: 20px;">
 			</form>
 			{% if data %}
-				<h3 style="margin-left:20px;" >Given profile matches with a <b>{{data}}</b></h3>
+				<h3 style="margin-left:20px;" >Given profile matches with a 
+					
+					Give profile matches <b>{{data[0]}}%</b> with Recruiter
+					Give profile matches <b>{{data[1]}}%</b> with Software Engineer
+					Give profile matches <b>{{data[2]}}%</b> with Electrical Engineer
+					Give profile matches <b>{{data[3]}}%</b> with Mechanical Engineer
+				
+				</h3>
 			{% endif %}
 		</div>
 	</body>

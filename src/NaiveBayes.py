@@ -98,12 +98,24 @@ def classify(doc):
 
     max_score = score[0]
 
+    print(score)
+
     for i in range(len(score)):
+        score[i] = (score[i] - min(score))/(max(score) - min(score))
+
+    total_score = sum(score)
+    confidence_score = {}
+
+    for i in range(len(score)):
+        confidence_score[i] = (score[i]/total_score) * 100
+
+    for i in range(len(score)):
+        
         if score[i] > max_score:
             label = i
             max_score = score[i]
     print(label)
-    return label
+    return confidence_score
 
 
 def test_accuracy():
@@ -182,13 +194,20 @@ def classify_profile(profile):
 
     label = classify(profile_data)
 
-    if label == 0:
-        return "Recruiter"
-    elif label == 1:
-        return "Software Engineer"
-    elif label == 2:
-        return "Electrical Engineer"
-    elif label == 3:
-        return "Mechanical Engineer"
-    elif label == 4:
-        return "Business Analyst"
+    return label
+
+    # if label == 0:
+    #     return "Recruiter"
+    # elif label == 1:
+    #     return "Software Engineer"
+    # elif label == 2:
+    #     return "Electrical Engineer"
+    # elif label == 3:
+    #     return "Mechanical Engineer"
+    # elif label == 4:
+    #     return "Business Analyst"
+
+# if __name__ == '__main__':
+#     preprocess()
+#     naive_bayes()
+#     classify(parse("Test Data/Software Engineers/SoftwareEngineer53.txt"))

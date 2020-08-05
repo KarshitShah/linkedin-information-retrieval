@@ -10,16 +10,16 @@
 
 	<body>
 		<div class="container">
-			<h2 style="margin: 20px;">LinkedIn Profile Classifier</h2>
+			<h1 style="margin: 20px;">LinkedIn Profile Classifier</h1>
 			<form method="POST" action="/result">
 				<div class="form-group" style="margin-left: 20px;">
 					<label for="url">Enter LinkedIn Profile Url:</label>
 					<input type="text" class="form-control" name="url" placeholder="Enter url here" >
 				</div>
-				<input type="submit" value="Get" class="btn btn-info" style="width:250px;text-align: center;margin: 20px;">
+				<input type="submit" value="Get Domain" class="btn btn-info" style="width:150px;text-align: center;margin: 20px;">
 			</form>
 			{% if data %}
-				<h3 style="margin-left:20px;" >{{data}}</h3>
+				<h3 style="margin-left:20px;" >Given profile matches with a <b>{{data}}</b></h3>
 			{% endif %}
 		</div>
 	</body>

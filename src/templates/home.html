@@ -9,19 +9,23 @@
 	</head>
 	<body>
 		<div class="container">
-			<h2 style="margin: 20px;">LinkedIn Information Retrieval and Classifier</h2>
+			<h1 style="margin: 20px;">LinkedIn Information Retrieval and Classifier</h1>
+			<div style="font-size: 20px;">Use this system to retrieve and classify LinkedIn Profiles. To get domain of a particular profile, select <b>Get domain 
+				of a profile</b>. To retrieve profiles relating to a certain keywords, select <b>Search for profiles</b>
+			</div>
+			<br>
 			<form method="POST" action="/home">
 				<div class="form-check">
 					<label class="form-check-label" for="d1">
-						<input type="radio" name="choice" value="domain" id="d1">Get domain of a profile<br>
+						<input type="radio" name="choice" value="domain" id="d1"><b>Get domain of a profile</b><br>
 					</label>
 				</div>
 				<div class="form-check">
 					<label class="form-check-label" for="k1">
-						<input type="radio" name="choice" value="keywords" id="k1">Search for profiles<br>
+						<input type="radio" name="choice" value="keywords" id="k1"><b>Search for profiles</b><br>
 					</label>
 				</div>
-				<input type="submit" value="Get" class="btn btn-info" style="width:250px;text-align: center;margin: 20px;">
+				<input type="submit" value="Get" class="btn btn-info" style="width:100px;text-align: center;margin: 20px;">
 			</form>
 		</div>
 	</body>

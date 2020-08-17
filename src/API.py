@@ -19,31 +19,6 @@ def get_template():
         return render_template('retrieve_profiles.html')
 
 
-# @app.route('/result', methods=['POST'])
-# def retrieve_data():
-#     url = request.form.get("url", None)
-#     query = request.form.get("queries", None)
-
-#     if url:
-#         domain=classify_profile(url)
-#         return render_template('find_domain.html', data=domain)
-#     else:
-#         queries = query.split(' ')
-#         test = get_results(queries)
-#         result = []
-
-#         for value in test.values():
-#             values = value.split("-;")
-#             data = {
-#                 "name": values[0],
-#                 "url": values[1],
-#                 "title": values[2]
-#              }
-#             result.append(data)
-
-#         return render_template('retrieve_profiles.html', data=result)
-
-
 @app.route('/result', methods=['POST'])
 def retrieve_data():
     url = request.form.get("url", None)
@@ -68,7 +43,6 @@ def retrieve_data():
             result.append(data)
 
         return render_template('retrieve_profiles.html', data=result)
-
     else:
         profile_data = classify_profile_cluster(cluster)
         lines_for_predicting=[profile_data]
@@ -77,13 +51,6 @@ def retrieve_data():
         predicted_list_of_clusters=predict(lines_for_predicting)
         return render_template('find_domain.html', data=predicted_list_of_clusters[0])
         
-
-
-        
-
-
-
-
 
 if __name__=='__main__':
     preprocess()

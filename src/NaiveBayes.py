@@ -114,6 +114,7 @@ def classify(doc):
         if score[i] > max_score:
             label = i
             max_score = score[i]
+    print(confidence_score)
     print(label)
     return confidence_score
 
@@ -207,7 +208,7 @@ def classify_profile(profile):
     # elif label == 4:
     #     return "Business Analyst"
 
-# if __name__ == '__main__':
-#     preprocess()
-#     naive_bayes()
-#     classify(parse("Test Data/Software Engineers/SoftwareEngineer53.txt"))
+if __name__ == '__main__':
+    preprocess()
+    naive_bayes()
+    classify(parse("Test Data/Software Engineers/SoftwareEngineer52.txt"))

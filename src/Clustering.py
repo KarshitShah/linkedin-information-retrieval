@@ -66,7 +66,6 @@ def classify_profile_cluster(profile):
     return profile_data
 
 def buildModel(n_clusters=5, max_iters=1000):
-    
     tfidf = TfidfVectorizer(use_idf=True, smooth_idf=False, min_df=10, ngram_range=(1,1),stop_words='english')
     data = tfidf.fit_transform(lists)
     dataframe=pd.DataFrame(data.toarray(),columns=tfidf.get_feature_names())
@@ -81,8 +80,6 @@ def buildModel(n_clusters=5, max_iters=1000):
 
 
 def predict(lines_for_predicting, model=Model, tfidf=TFIDF_score):
-    # lines_for_predicting=[lists[300], lists[110], lists[150]]
-    # predicting output labels :
     output = model.predict(tfidf.transform(lines_for_predicting))
     print(output)
     return output
@@ -94,21 +91,6 @@ def driver():
     model, tfidf=buildModel()
     Model=model
     TFIDF_score=tfidf
-    # uncomment the following lines in order to run this as a normal python program
-
-    # profile_data=classify_profile_cluster('https://www.linkedin.com/in/kedar-nadkarni/')
-    # lines_for_predicting=[profile_data]
-    # predict(Model, TFIDF_score, lines_for_predicting)
-
-## uncomment the following lines and the above driver methods lines in order to run this as a normal program
-
-# if __name__=='__main__':
-#     processTrainingData()
-#     print(lists)
-#     model, tfidf=buildModel()
-#     profile_data=classify_profile('https://www.linkedin.com/in/kedar-nadkarni/')
-#     lines_for_predicting=[profile_data]
-#     predict(model, tfidf, lines_for_predicting)
 
 
 
